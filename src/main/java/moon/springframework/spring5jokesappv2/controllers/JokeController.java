@@ -15,6 +15,12 @@ public class JokeController {
 		this.jokeService = jokeService;
 	}
 	
+	/** 
+	 * By returning "index" String,
+	 * this tells Thymleaf to look for a template file called index.html.
+	 * @param model
+	 * @return "index" String
+	 */
 	@RequestMapping({"/", ""})
 	public String showJoke(Model model) {
 		model.addAttribute("joke", jokeService.getJoke());
